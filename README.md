@@ -11,6 +11,3 @@ The Sphinx builder in the `brightway-documentation` repository uses the [`nbsphi
  - [Code cells formatting](https://nbsphinx.readthedocs.io/en/0.9.2/code-cells.html)
 
 ### Embedding Images
-
-
-
