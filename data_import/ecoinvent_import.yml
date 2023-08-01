@@ -1,0 +1,13 @@
+name: brightway_example_graph_technosphere
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  # core functionality
+  - python=3.11
+  - ipython
+  # life-cycle assessment
+  - bw2data
+  - bw2calc
+  - bw2io
+  
