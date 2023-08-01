@@ -9,4 +9,8 @@ The Sphinx builder in the `brightway-documentation` repository uses the [`nbsphi
  - [Markdown cells formatting](https://nbsphinx.readthedocs.io/en/0.9.2/markdown-cells.html)
  - [Code cells formatting](https://nbsphinx.readthedocs.io/en/0.9.2/code-cells.html)
 
+### Example Gallery
+
+[Gallery Instructions](https://nbsphinx.readthedocs.io/en/latest/subdir/gallery.html)
+
 ### Embedding Images
