@@ -18,9 +18,9 @@ jobs:
 
         - name: Set up Python
           uses: actions/setup-python@v4 # https://github.com/actions/setup-python/releases
-            with:
+          with:
             python-version: 3.11
-
+            
         - name: Install Dependencies
           run: |
             python -m pip install --upgrade pip
