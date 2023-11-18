@@ -8,4 +8,14 @@ A collection of Jupyter notebooks containing self-contained examples showcasing 
 
 ## Notebook Authoring Guidelines
 
-A detailed guide is available in the [`authoring.ipynb`](./guide/authoring.ipynb) notebook. This guide ia also available on the Brightway Documentation webpage at [docs.brightway.dev/examples/guide/authoring](https://docs.brightway.dev/en/latest/content/examples/index.html).
+A detailed guide is available in the [`authoring.ipynb`](./guide/authoring.ipynb) notebook. This guide ia also available on [the Brightway Documentation webpage](https://docs.brightway.dev/en/latest/content/examples/index.html).
+
+## GitHub Actions
+
+[![Create Workflow Dispatch (Trigger Submodule Pull), Re-Use Workflow](https://github.com/brightway-lca/brightway-examples/actions/workflows/github_action_trigger_submodule_pull_reusable.yml/badge.svg)](https://github.com/brightway-lca/brightway-examples/actions/workflows/github_action_trigger_submodule_pull_reusable.yml)
+
+All the examples collected in this repository are available as a submodule in the `brightway-documentation` repository. This allows us to collect the examples in a separate repository and still have them available on the Brightway Documentation webpage. This action triggers a `submodule` pull action in the `brightway-documentation` repository that keeps the examples up to date. It is triggered every time a new commit is pushed to the `brightway-examples` repository.
+
+[![Test all Jupyter Notebooks for valid JSON (or else they might break the readthedocs.org build)](https://github.com/brightway-lca/brightway-examples/actions/workflows/test_notebooks.yml/badge.svg)](https://github.com/brightway-lca/brightway-examples/actions/workflows/test_notebooks.yml)
+
+Jupyter Notebooks are JSON files. If they are not valid JSON, the readthedocs.org build will fail. Invalid JSON might be the result of an incomplete save process or other file corruption. This action tests all Jupyter Notebooks for valid JSON and fails if one of the notebooks is not valid JSON. It is triggered every time a pull request is opened.
