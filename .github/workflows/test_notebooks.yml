@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-notebooks:
+  validate-notebooks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -24,6 +24,11 @@ jobs:
         run: |
             valid_files=""
             for file in $(find . -name "*.ipynb"); do
-                python -c "import json; json.loads(open('$file').read())" && valid_files="$valid_files $file"
+                if python -c "import json; json.loads(open('$file').read())"; then
+                    valid_files="$valid_files\n$file"
+                else
+                    echo "Validation failed for $file"
+                    exit 1
+                fi
             done
-            echo "Validation successful for the following files: $valid_files"
+            echo -e "Validation successful for the following files:\n$valid_files"
