@@ -4,12 +4,12 @@
 ![License](https://img.shields.io/github/license/brightway-lca/brightway-documentation?color=green&logo=Open%20Source%20Initiative&logoColor=white) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&logo=GitHub)](https://github.com/brightway-lca/brightway-documentation-readthedocs/discussions) \
 Maintainance Team : [@michaelweinold](https://github.com/michaelweinold), [@cmutel](https://github.com/cmutel)
 
-A collection of Jupyter notebooks containing self-contained examples showcasing Brightway functionality. \
-A template for new examples is available in the `template` folder.
+A collection of Jupyter notebooks containing self-contained examples showcasing Brightway functionality. 
 
 ## How to Contribute Brightway Examples
 
-A detailed guide is available at the [Examples Contributing Guide](https://docs.brightway.dev/en/latest/content/examples/guide.html) on the Brightway Documentation website. This guide ia also available on [the Brightway Documentation webpage](https://docs.brightway.dev/en/latest/content/examples/index.html).
+A detailed guide is available at the [Examples Contributing Guide](https://docs.brightway.dev/en/latest/content/examples/guide.html) on the Brightway Documentation website. \
+A template for new examples is available in the `template` folder.
 
 ## GitHub Actions
 
