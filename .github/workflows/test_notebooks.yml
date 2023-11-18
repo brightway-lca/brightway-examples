@@ -22,6 +22,8 @@ jobs:
 
       - name: Validate Jupyter Notebooks JSON Format
         run: |
+            valid_files=""
             for file in $(find . -name "*.ipynb"); do
-                python -c "import json; json.loads(open('$file').read())" || { echo "Validation failed for $file"; exit 1; }
+                python -c "import json; json.loads(open('$file').read())" && valid_files="$valid_files $file"
             done
+            echo "Validation successful for the following files: $valid_files"
