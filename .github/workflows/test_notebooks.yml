@@ -1,0 +1,34 @@
+name: Test all Jupyter Notebooks for valid JSON (or else they might break the readthedocs.org build)
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+    - '.github/**'
+  workflow_dispatch:
+
+jobs:
+  validate-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4 # https://github.com/actions/checkout/releases
+
+      - name: Set up Python
+        uses: actions/setup-python@v4 # https://github.com/actions/setup-python/releases
+        with:
+          python-version: 3.11
+
+      - name: Validate Jupyter Notebooks JSON Format
+        run: |
+            valid_files=""
+            for file in $(find . -name "*.ipynb"); do
+                if python -c "import json; json.loads(open('$file').read())"; then
+                    valid_files="$valid_files\n$file"
+                else
+                    echo "Validation failed for $file"
+                    exit 1
+                fi
+            done
+            echo -e "Validation successful for the following files:\n$valid_files"
